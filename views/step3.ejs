@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sign Up</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/stylesheets/my.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/stylesheets/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--navbar header-->
+<nav class="navbar navbar-fixed-top" style="background-color: #BB0826">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="/img/wf_logo_linear-rgb.png" style="height:13px; margin-top:5px">
+            </a>
+        </div>
+
+    </div>
+</nav>
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" style="background-color: #F5F5F5; margin-top:-20px; ">
+        <ul class="sidebar-nav" style="margin-top:20px;">
+            <li class=" sidebar-brand">
+                <img src="/img/avatar2.jpg" class="img-responsive img-circle" alt="Responsive image"
+                     style="width: 30%;margin-left: 30px;display: inline">
+                <span style="color: #56585B;font-size: 30px;font-style:bold">&nbsp;70</span>
+                <span style="color: #56585B;font-size: 10px;">% Complete</span>
+                <h4 style="margin-left: 30px; color: #56585B">Kathryn Stein</h4>
+                <h8 style="margin-left: 30px; font-size: 10px;color: #56585B">Visibility: Anonymous</h8>
+                <h8 style="margin-left: 30px; font-size: 10px;color: #56585B">Available: Yes</h8>
+            </li>
+            <li style="text-align: center;background-color: #FFFFFF; width:130%">
+                <a href="#"><i class="fa fa-user" aria-hidden="true"
+                               style="text-decoration:none;color:#BB0826;font-size:30px"></i><br>
+                    <span style="color:#BB0826;font-size:15px">Profile</span>
+                </a>
+            </li>
+            <li style="text-align: center; width:130%" id="other">
+                <a href="#"><i class="fa fa-cog" aria-hidden="true"
+                               style="text-decoration:none;color:#BFC0BE;font-size:30px"></i><br>
+                    <span style="color:#BFC0BE;font-size:13px" id="words">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <!--right center title heading-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2" style="text-align: center; margin-bottom:20px">
+                <p style="color:#BB0826">Step 2 of 3</p>
+                <h3>Personalize your Recommendations</h3>
+                <h4>Now, tell us a little bit more about your preferences...</h4>
+            </div>
+        </div>
+        <!--right Accordion-->
+        <form action="/step3" method="post">
+        <div class="center-block" style="width: 94%;">
+            <!--first Accordion-->
+            <hr style="margin-top: 0px;margin-bottom: 0px;border:0; height:1px; background-color:#BB0826;">
+            <div class="row">
+                <div class="col-md-4" style="text-align: left">
+                    <h6 style="color: #BB0826">JOB PREFERENCES</h6>
+                </div>
+                <div class="col-md-4 col col-md-offset-4" style="text-align: right">
+                    <a href="#collapseOne" id="1">
+                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"
+                              style="color:#BB0826"></span></a>
+                </div>
+            </div>
+            <!--form 1-->
+                <div class="collapse in" id="collapseOne">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="First Name">What are your desired locations?</label>
+                                <input type="text" class="form-control form-control-sm" id="First Name"
+                                       placeholder="Search Locations" value='<%= user.city %>'>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="First Name">What skills or roles are you interested in?</label>
+                                <input type="text" class="form-control form-control-sm" id="First Name"
+                                       placeholder="Enter skill and/or functions i.e. HTML"
+                                       value='<%= user.intSkill %>'>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="First Name">How far are you willing to commute?</label>
+                                <input type="text" class="form-control form-control-sm" id="First Name"
+                                       placeholder="Commute Radius">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="First Name">What type of position do you prefer? </label>
+                                <input type="text" class="form-control form-control-sm" id="First Name"
+                                       placeholder="Select"  value='<%= user.title %>'>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-6">
+                            <div class="form-group">
+                                <label for="First Name">Are you currently interested in a change?</label>
+                                <input type="text" class="form-control form-control-sm" id="First Name"
+                                       placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Second Accordion-->
+                <hr style="margin-top: 0px;margin-bottom: 0px;border:0; height:1px; background-color:#BB0826;">
+                <div class="row">
+                    <div class="col-md-4" style="text-align: left">
+                        <h6 style="color: #BB0826">RESUME</h6>
+                    </div>
+                    <div class="col-md-4 col col-md-offset-4" style="text-align: right">
+                        <a href="#collapseTwo" id="2">
+                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"
+                              style="color: #BB0826"></span></a>
+                    </div>
+                </div>
+
+            <div class="collapse" id="collapseTwo">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="First Name">Current City</label>
+                            <input type="text" class="form-control form-control-sm" id="First Name"
+                                   placeholder="Search Locations" value='<%= user.city %>'>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="First Name">What is your previous experience?</label>
+                            <input type="text" class="form-control form-control-sm" id="First Name"
+                                   placeholder="Enter skill and/or functions i.e. HTML"
+                                   value='<%= user.intSkill %>'>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="First Name">How far are you willing to commute?</label>
+                            <input type="jtext" class="form-control form-control-sm" id="First Name"
+                                   placeholder="Commute Radius">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="First Name">What skills do you offer? </label>
+                            <input type="text" class="form-control form-control-sm" id="First Name"
+                                   placeholder="Select" value='<%= user.title %>'>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                        <div class="form-group">
+                            <label for="First Name">Are you currently interested in a change?</label>
+                            <input type="text" class="form-control form-control-sm" id="First Name"
+                                   placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!--third Accordin-->
+                <hr style="margin-top: 0px;margin-bottom: 0px;border:0; height:1px; background-color:#BB0826;">
+                <div class="row">
+                    <div class="col-md-4" style="text-align: left">
+                        <h6 style="color: #BB0826">PERSONAL PROFILE</h6>
+                    </div>
+                    <div class="col-md-4 col col-md-offset-4" style="text-align: right">
+                        <a href="#collapseThree" id="3">
+                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"
+                              style="color: #BB0826"></span></a>
+                    </div>
+                </div>
+
+                <div class="collapse" id="collapseThree">
+                    <p>Good morning mam/sir.</p>
+
+                    <p>It's my pleasure to introduce my self..well, I'm Rehana born and raised in Anantapur.
+                    I have done my schooling in Little flower Montessori English Medium High School with 77% ,then i did my plus 12 from S.S.B.N junior college with 77.7% and now i'm pursuing my final year B.tech from Anantha Lakshmi Institute of Technology and Sciences Anantapur with an aggregate of 78.33%</p>
+
+                    <p>My strengths are my attitude that i like to take challenges that I CAN do it,my way of thinking that i take both success and failure in a balanced manner..</p>
+                    I dont like to say weakness but i like to say scope for improvement that is i wont leave any ask in completely,i believe in my self and my hard work and i want perfection in every thing.</p>
+
+                    <p>My short term goal is i want a such a platform where i can grow my career along with the organisation growth like yours and</p>
+                    <p>My Long term goal is i want to be one of the reason for the success of the organisation and i want to seeyour organisation as a bench mark to other organisations.</p>
+
+                    <p>My ethic is "i never neglect an opportunity for my improvement".</p>
+
+                    <p>thats all about me sir....thank you for giving me such a wonderful oppurtunity.</p>
+                </div>
+        </div>
+        <div class="form-group row" style="margin-top:10%">
+            <div class="col-md-4 col-md-offset-5">
+                <!--<a href="/step4" class="btn btn-primary btn-lg" style=""><strong>Go To Step 3</strong></a><br>-->
+                <button type="submit" class="btn btn-primary btn-lg">Go To Step 3</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="js/jquery-3.1.0.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script type="text/javascript">
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    $(document).ready(function () {
+        $('#1').click(function () {
+            $('#collapseOne').collapse('show');
+            $('#collapseTwo').collapse('hide');
+            $('#collapseThree').collapse('hide');
+        });
+
+        $('#2').click(function () {
+            $('#collapseOne').collapse('hide');
+            $('#collapseTwo').collapse('show');
+            $('#collapseThree').collapse('hide');
+        });
+
+        $('#3').click(function () {
+            $('#collapseOne').collapse('hide');
+            $('#collapseTwo').collapse('hide');
+            $('#collapseThree').collapse('show');
+        });
+    });
+</script>
+</body>
+</html>

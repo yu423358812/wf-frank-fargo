@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <!--<script src="./public/js/angular.min.js"></script>-->
+    <!--<script src="./angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+</head>
+
+<!--<body>-->
+<!--<nav class="navbar navbar-default">-->
+<!--<div class="container-fluid">-->
+<!--<div class="navbar-header">-->
+<!--<a class="navbar-brand" href="#">-->
+<!--<a class="navbar-brand" href="#">Chatbot Console</a>-->
+<!--</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</nav>-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-md-10 col-md-offset-1">-->
+<!--<div class="page-header">-->
+<!--<h1>A.I. Bot <small>Chat History</small></h1>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div ng-app="myApp" ng-controller="myCtrl">-->
+<!--<div ng-repeat="log in logs">-->
+<!--{{log.message}}-->
+<!--</div>-->
+<!--</div>-->
+<!--<script>-->
+<!--var app = angular.module('myApp', []);-->
+<!--app.controller('myCtrl', function($scope, $interval) {-->
+<!--$scope.theTime = new Date().toLocaleTimeString();-->
+<!--$interval(function () {-->
+
+<!--$http.get("https://cb-bot-3.herokuapp.com/getChatLog")-->
+<!--.then(function (response) {-->
+<!--$scope.logs = response.data;-->
+<!--console.log($scope.logs);-->
+<!--}-->
+<!--);-->
+
+<!--}-->
+<!--, 1000);-->
+<!--});-->
+<!--</script>-->
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#">A.I. Chatbot Console</a>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="page-header">
+                <h1><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> A.I. Chatbot
+                    <small>Conversation History</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="well">
+        <div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Conversation History:</th>
+                </tr>
+                <tr ng-repeat="log in logs | orderBy:'+id' | limitTo:30">
+                    <td>> {{log.message}}</td>
+                </tr>
+            </table>
+            <!--<div ng-repeat="log in logs | orderBy:'-id'">-->
+                <!--<p>> {{log.message}}</p><hr>-->
+            <!--</div>-->
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function ($scope, $http, $interval) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+        $scope.theTime = new Date().toLocaleTimeString();
+
+
+        $interval(function () {
+            $http.get('https://cb-bot-3.herokuapp.com/getChatLog').then(function(response) {
+                //console.log("refreshing");
+                $scope.results = response.data;
+                $scope.logs = $scope.results.logs;
+            });
+        }, 2000);
+    });
+</script>
+</body>
+</html>

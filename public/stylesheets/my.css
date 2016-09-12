@@ -1,0 +1,14 @@
+/*div{*/
+/*border-style: solid;*/
+/*border-color: blue;*/
+/*border-width: 1px;*/
+/*}*/
+
+body{
+    padding-top: 70px;
+}
+
+#foot{
+    background-color: #BB0826;
+    text-align: center;
+}

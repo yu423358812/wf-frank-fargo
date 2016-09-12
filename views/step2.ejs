@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sign Up</title>
+
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/stylesheets/my.css" rel="stylesheet">
+
+</head>
+<body style="background-color:#F5F5F5">
+
+<nav class="navbar navbar-fixed-top" style="background-color: #BB0826">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="/img/wf_logo_linear-rgb.png" style="height:13px; margin-top:5px">
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2" style="text-align: center">
+            <p style="color:#BB0826">Step 1 of 3</p>
+            <h3>Create your Profile</h3>
+            <p>First, a few things we need from you...</p>
+            <p>Or sign into your LinkedIn account to get a head start.</p>
+            <a href="/auth/linkedin" class="btn btn-primary"><span class="fa fa-linkedin"></span> Linkedin</a></br></br>
+            <div class="row" style="text-align: left">
+                <div class="col-md-8 col-md-offset-2">
+                    <form action="/step2" method="post">
+                        <div class="form-group">
+                            <label for="First Name">First Name</label>
+                            <input type="text" class="form-control form-control-sm" id="First Name" placeholder="Your first name" value='<%= user.firstName %>'>
+                        </div>
+                        <div class="form-group">
+                            <label for="Last Name">Last Name</label>
+                            <input type="text" class="form-control form-control-sm" id="Last Name" placeholder="Your last name" value='<%= user.lastName %>'>
+                        </div>
+                        <div class="form-group">
+                            <label for="Current Location">Email</label>
+                            <input type="email" class="form-control form-control-sm" id="Email" placeholder="Your email address" value='<%= user.email %>' >
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Phone</label>
+                            <input type="text" class="form-control form-control-sm" id="Phone" placeholder="Phone Number i.e. (415) 222-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="Current Title">Current Title</label>
+                            <input type="text" class="form-control form-control-sm" id="Current Title" placeholder="What is your current title with Wells Fargo?" value='<%= user.title %>'>
+                        </div>
+                        <div class="form-group">
+                            <label for="Current Department">Current Department</label>
+                            <input type="text" class="form-control form-control-sm" id="Current Department" placeholder="What department do you currently work in?" value='<%= user.industry %>'>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>What do you want to make visible on your profile?</p>
+                                <!--<form>-->
+                                  <input type="radio" name="gender1" value="male" checked="checked"> Current Title<br>
+                                  <input type="radio" name="gender1" value="female"> Current Department<br>
+                                  <input type="radio" name="gender1" value="other"> Current Location
+                                <!--</form>-->
+<!--
+                                <div class="pull-right">
+                                    <div><input type="checkbox" checked data-toggle="toggle" data-size="mini" data-onstyle="danger" data-style="ios" data-on=" " data-off=" "></div>
+                                    <div><input type="checkbox" data-toggle="toggle" data-size="mini" data-onstyle="danger" data-style="ios" data-on=" " data-off=" "></div>
+                                    <div></span><input type="checkbox" checked data-toggle="toggle" data-size="mini" data-onstyle="danger" data-style="ios" data-on=" " data-off=" "></div>
+                                </div>
+-->
+                            </div>
+                            <div class="col-md-6">
+                                <p>Would you like to make receive notifications by:</p>
+                                <!--<form>-->
+                                  <input type="radio" name="gender2" value="male" checked="checked"> Email<br>
+                                  <input type="radio" name="gender2" value="female"> Push<br>
+                                <!--</form>-->
+                            </div>
+                        </div>
+                            <div class="form-group row" style="margin-top:10%">
+                              <div class="col-md-4 col-md-offset-4">
+                                <!--<a href="/step3" class="btn btn-primary btn-lg" style=""><strong>Go To Step 2</strong></a>-->
+                                  <button type="submit" class="btn btn-primary btn-lg">Go To Step 2</button>
+                                   <p  style="text-align: center; margin-top: 5px"><a href="#">Cancel</a></p>
+                              </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+<!--<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>-->
+</body>
+</html>

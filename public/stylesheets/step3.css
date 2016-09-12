@@ -1,0 +1,105 @@
+body{
+    padding-top: 50px;
+}
+
+#sidebar-wrapper-left {
+    z-index: 1;
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    overflow-y: hidden;
+    background: #F0F2F2;
+    /*-webkit-transition: all 0.5s ease;*/
+    /*-moz-transition: all 0.5s ease;*/
+    /*-o-transition: all 0.5s ease;*/
+    /*transition: all 0.5s ease;*/
+}
+
+#sidebar-wrapper {
+    z-index: 1;
+    position: absolute;
+    right: 0px;
+    width: 0px;
+    height: 100%;
+    overflow-y: hidden;
+    background: #F0F2F2;
+    /*-webkit-transition: all 0.5s ease;*/
+    /*-moz-transition: all 0.5s ease;*/
+    /*-o-transition: all 0.5s ease;*/
+    /*transition: all 0.5s ease;*/
+}
+
+#sidebar-wrapper-rightNav {
+    z-index: 2;
+    position: absolute;
+    right: 0px;
+    width: 0px;
+    height: 100%;
+    overflow-y: hidden;
+    background: #BB0826;
+    /*-webkit-transition: all 0.5s ease;*/
+    /*-moz-transition: all 0.5s ease;*/
+    /*-o-transition: all 0.5s ease;*/
+    /*transition: all 0.5s ease;*/
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 200px;
+}
+
+#wrapper.slider #sidebar-wrapper-rightNav {
+    width: 200px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    padding-right: 0px;
+    padding-left: 200px;
+    background-color: #FFFFFF;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    padding-right: 200px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+}
+
+.sidebar-nav #other:hover {
+    text-decoration: none;
+    background-color: lightcoral;
+}
+
+
+
+@media(max-width:768px) {
+    #sidebar-wrapper-left {
+        width: 0px;
+    }
+    #page-content-wrapper {
+        padding-left: 0px;
+    }
+    #wrapper.toggled #page-content-wrapper {
+        padding-right: 0px;
+    }
+}

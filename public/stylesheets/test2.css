@@ -1,0 +1,12 @@
+/*div{*/
+/*border-style: solid;*/
+/*border-color: blue;*/
+/*border-width: 1px;*/
+/*}*/
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+.toggle.ios .toggle-handle { border-radius: 20px; }
+
+body{
+    padding-bottom: 20px;
+}
